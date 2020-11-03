@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import Article from '../../components/article/article';
 import { Constants } from '../../constants';
 import _ from 'lodash';
+// import loader from '../../../public/assets/loader.svg';
 
 const Content = () => {
     const domRef = useRef();
@@ -50,7 +51,7 @@ const Content = () => {
             <ul className={styles.cardWrapper}>
                 {displayItems()}
             </ul>
-            {isLoading ? <p>{Constants.MORE_LABEL}</p> : ""}
+            {isLoading ? <p>{Constants.MORE_LABEL} <img src={window.location.origin + '/assets/loader.svg'} /></p> : ""}
         </div>
     )
 }
