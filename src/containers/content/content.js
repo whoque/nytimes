@@ -11,14 +11,15 @@ const Content = () => {
     const [isLoading, setIsLoading] = useState(false);
     let page = 0;
     useEffect(() => {
+        const domNode = domRef.current;
         function scrollEventhandler() {
-            if (domRef.current.scrollTop + domRef.current.clientHeight >= domRef.current.scrollHeight - 20) {
+            if (domNode.scrollTop + domNode.clientHeight >= domNode.scrollHeight - 20) {
                 loadMoreItems();
             }
         }
-        domRef.current.addEventListener("scroll", scrollEventhandler);
+        domNode.addEventListener("scroll", scrollEventhandler);
         getArticle();
-        return () => domRef.current.removeEventListener("scroll", scrollEventhandler)
+        return () => domNode.removeEventListener("scroll", scrollEventhandler)
     }, [])
     
     const getArticle = async () => {
@@ -30,7 +31,7 @@ const Content = () => {
         setItems(prev => [...prev, ...data.response.docs]);
     }
 
-    const debounceLoadData = useCallback(_.debounce(getArticle, 1000), []);
+    const debounceLoadData = useCallback(_.debounce(getArticle, 500), []);
     
     const displayItems = () => {
         return items.map(item => (
@@ -49,7 +50,7 @@ const Content = () => {
             <ul className={styles.cardWrapper}>
                 {displayItems()}
             </ul>
-            {isLoading ? <p className="loading">{Constants.MORE_LABEL}</p> : ""}
+            {isLoading ? <p>{Constants.MORE_LABEL}</p> : ""}
         </div>
     )
 }

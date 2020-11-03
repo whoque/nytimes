@@ -2,19 +2,45 @@
   "name": "nytimes",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.1.10",
+    "firebase": "^7.21.0",
+    "firebase-admin": "^9.3.0",
+    "firebase-functions": "^3.11.0",
     "isomorphic-unfetch": "^3.1.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
-    "next": "10.0.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-moment": "^1.0.0",
-    "sass": "^1.27.0"
+    "react-scripts": "4.0.0",
+    "sass": "^1.27.0",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

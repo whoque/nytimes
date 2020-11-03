@@ -11,7 +11,7 @@ const Article = ({ card }) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.imgWrapper}>
-                <img className={styles.image} src={imageUrl} />
+                <img className={styles.image} src={imageUrl} alt={card.news_desk} />
             </div>
             <div className={styles.textWrapper}>
                 <h4>{card?.headline?.print_headline || card?.headline?.main}</h4>
