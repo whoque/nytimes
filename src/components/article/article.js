@@ -3,7 +3,6 @@ import styles from './article.module.scss';
 import Moment from 'react-moment';
 
 const Article = ({ card }) => {
-    // console.log(card)
     const imageBlob = card?.multimedia?.find(item =>
         (item.subtype === Constants.MULTIMEDIA_480 || item.subtype === Constants.MULTIMEDIA_495) && item.url
     );
