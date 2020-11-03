@@ -1,0 +1,18 @@
+.wrapper {
+    flex: 0.94;
+    overflow: auto;
+    padding: 10px 20px;
+    .cardWrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 2.5rem;
+        padding: 0;
+    }
+    .cardWrapper {
+        &> li {
+            list-style: none;
+            position: relative;
+            height: 350px;
+        }
+    }
+}
